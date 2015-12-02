@@ -1,0 +1,41 @@
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ */
+'use strict';
+var React = require('react-native');
+var {
+    AppRegistry,
+    StyleSheet,
+    View,
+    } = React;
+
+var Item = require('./item');
+var AwesomeProject = React.createClass({
+    render: function () {
+        return (
+            <View style={styles.container}>
+                <Item style={styles.item1} color='#aaa' width='100' height='100' text='Icon'
+                      img='https://raw.githubusercontent.com/lizhangqu/androidicons/master/assets/blue_dark/xhdpi/ic_action_achievement.png'></Item>
+                <Item style={styles.item2} color='#aaa' width='100' height='100' text='Icon'
+                      img='https://raw.githubusercontent.com/lizhangqu/androidicons/master/assets/blue_dark/xhdpi/ic_action_bike.png'></Item>
+            </View>
+        );
+    },
+});
+
+var styles = StyleSheet.create({
+    container: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#ff0000'
+    },
+    item1: {
+        marginLeft: 100,
+    },
+    item2: {
+        marginLeft: 100,
+    }
+});
+AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);

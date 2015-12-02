@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.KeyEvent;
 
+import com.demo.reactpackage.MyReactPackage;
 import com.facebook.react.LifecycleState;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactRootView;
@@ -23,13 +24,14 @@ public class MainActivity extends Activity implements DefaultHardwareBackBtnHand
         mReactInstanceManager = ReactInstanceManager.builder()
                 .setApplication(getApplication())
                 .setBundleAssetName("index.android.bundle")
-                .setJSMainModuleName("index.android")
+                .setJSMainModuleName("demo")//具体js端的模块名字
                 .addPackage(new MainReactPackage())
+                .addPackage(new MyReactPackage())
                 .setUseDeveloperSupport(BuildConfig.DEBUG)
                 .setInitialLifecycleState(LifecycleState.RESUMED)
                 .build();
 
-        mReactRootView.startReactApplication(mReactInstanceManager, "HelloWorld", null);
+        mReactRootView.startReactApplication(mReactInstanceManager, "AwesomeProject", null);
 
         setContentView(mReactRootView);
     }

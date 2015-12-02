@@ -5,6 +5,7 @@
 'use strict';
 
 var React = require('react-native');
+//var ToastAndroid = React.ToastAndroid;
 var {
     AppRegistry,
     Image,
@@ -27,7 +28,7 @@ var Loadding = React.createClass({
         return (
             <View style={styles.container}>
                 <Text>
-                    Loading movies...
+                    Loading movies.................
                 </Text>
             </View>
         );
@@ -61,6 +62,7 @@ var HelloWorld = React.createClass({
     },
 
     render: function () {
+        //ToastAndroid.show('aaaa',ToastAndroid.SHORT);
         if (!this.state.loaded) {
             return (<Loadding/>);
         }
